@@ -2,10 +2,11 @@
 
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
+var twitterConfig = require('./twitter.config.js'),
 
 module.exports = function () {
 
-  var db = mongoose.connect('mongodb://yeson1600:testing123@ds013216.mlab.com:13216/yeson1600');
+  var db = mongoose.connect(twitterConfig.mongoURI);
 
   var UserSchema = new Schema({
     email: {

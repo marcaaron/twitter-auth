@@ -12,7 +12,8 @@ var mongoose = require('./mongoose'),
   bodyParser = require('body-parser'),
   request = require('request'),
   twitterConfig = require('./twitter.config.js'),
-  path = require('path');
+  path = require('path'),
+  Twit = require('twit');
 
 mongoose();
 

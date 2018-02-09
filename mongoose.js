@@ -1,8 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
-var twitterConfig = require('./twitter.config.js'),
+	Schema = mongoose.Schema,
+	twitterConfig = require('./twitter.config.js');
 
 module.exports = function () {
 

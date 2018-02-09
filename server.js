@@ -11,7 +11,8 @@ var mongoose = require('./mongoose'),
   cors = require('cors'),
   bodyParser = require('body-parser'),
   request = require('request'),
-  twitterConfig = require('./twitter.config.js');
+  twitterConfig = require('./twitter.config.js'),
+  path = require('path');
 
 mongoose();
 
@@ -31,6 +32,11 @@ var corsOption = {
   exposedHeaders: ['x-auth-token']
 };
 app.use(cors(corsOption));
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+});
+
 
 //rest API requirements
 app.use(bodyParser.urlencoded({

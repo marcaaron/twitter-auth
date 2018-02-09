@@ -41,6 +41,40 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+app.post('/api/twitterpost', function(req,res){
+
+	// const obj = JSON.parse(req.body);
+	console.log(req.body);
+	// var T = new Twit({
+	//   consumer_key: twitterConfig.consumerKey,
+	//   consumer_secret: twitterConfig.consumerKey,
+	//   access_token:         '...',
+	//   access_token_secret:  '...',
+	//   timeout_ms:           60*1000
+  	// });
+
+	// // first we must post the media to Twitter
+	// T.post('media/upload', { media_data: b64content }, function (err, data, response) {
+	//   // now we can assign alt text to the media, for use by screen readers and
+	//   // other text-based presentations and interpreters
+	//   var mediaIdStr = data.media_id_string
+	//   var altText = "Small flowers in a planter on a sunny balcony, blossoming."
+	//   var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
+    //
+	//   T.post('media/metadata/create', meta_params, function (err, data, response) {
+	//     if (!err) {
+	//       // now we can reference the media and post a tweet (media will attach to the tweet)
+	//       var params = { status: 'loving life #nofilter', media_ids: [mediaIdStr] }
+    //
+	//       T.post('statuses/update', params, function (err, data, response) {
+	//         console.log(data)
+	//       })
+	//     }
+	//   })
+	// })
+});
+
+
 router.route('/health-check').get(function(req, res) {
   res.status(200);
   res.send('Hello World');
@@ -159,38 +193,6 @@ router.route('/auth/me')
 
 app.use('/api/v1', router);
 
-app.post('/api/twitterpost', function(req,res){
-
-	const obj = JSON.parse(req.body);
-
-	// var T = new Twit({
-	//   consumer_key: twitterConfig.consumerKey,
-	//   consumer_secret: twitterConfig.consumerKey,
-	//   access_token:         '...',
-	//   access_token_secret:  '...',
-	//   timeout_ms:           60*1000
-  	// });
-
-	// // first we must post the media to Twitter
-	// T.post('media/upload', { media_data: b64content }, function (err, data, response) {
-	//   // now we can assign alt text to the media, for use by screen readers and
-	//   // other text-based presentations and interpreters
-	//   var mediaIdStr = data.media_id_string
-	//   var altText = "Small flowers in a planter on a sunny balcony, blossoming."
-	//   var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
-    //
-	//   T.post('media/metadata/create', meta_params, function (err, data, response) {
-	//     if (!err) {
-	//       // now we can reference the media and post a tweet (media will attach to the tweet)
-	//       var params = { status: 'loving life #nofilter', media_ids: [mediaIdStr] }
-    //
-	//       T.post('statuses/update', params, function (err, data, response) {
-	//         console.log(data)
-	//       })
-	//     }
-	//   })
-	// })
-});
 
 app.listen(process.env.PORT);
 module.exports = app;

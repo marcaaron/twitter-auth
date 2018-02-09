@@ -161,7 +161,7 @@ app.use('/api/v1', router);
 
 app.post('/api/twitterpost', function(req,res){
 
-	console.log(req.body);
+	const obj = JSON.parse(req.body);
 
 	// var T = new Twit({
 	//   consumer_key: twitterConfig.consumerKey,

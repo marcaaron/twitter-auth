@@ -33,10 +33,7 @@ var corsOption = {
 };
 app.use(cors(corsOption));
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
-});
-
+app.use(express.static(path.join(__dirname, 'build')));
 
 //rest API requirements
 app.use(bodyParser.urlencoded({
@@ -161,7 +158,7 @@ router.route('/auth/me')
 
 app.use('/api/v1', router);
 
-app.listen(4000);
+app.listen(process.env.PORT);
 module.exports = app;
 
 console.log('Server running at http://localhost:4000/');

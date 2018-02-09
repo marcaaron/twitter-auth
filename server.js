@@ -43,12 +43,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.post('/api/twitterpost', function(req,res){
-
-	// const obj = JSON.parse(req.body);
 	console.log(req.body);
 	var T = new Twit({
 	  consumer_key: twitterConfig.consumerKey,
-	  consumer_secret: twitterConfig.consumerKey,
+	  consumer_secret: twitterConfig.consumerSecret,
 	  access_token:         req.body.token,
 	  access_token_secret:  req.body.secret,
 	  timeout_ms:           60*1000

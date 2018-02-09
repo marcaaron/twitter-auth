@@ -18,7 +18,7 @@ module.exports = function () {
         id: String,
         token: String
       },
-      select: false
+      select: true
     }
   });
 

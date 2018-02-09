@@ -35,9 +35,9 @@ app.use(cors(corsOption));
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-// app.post('/api/twitterpost', function(req,res){
-//
-// 	console.log(req.body);
+app.post('/api/twitterpost', function(req,res){
+
+	console.log(req.body);
 
 	// var T = new Twit({
 	//   consumer_key: twitterConfig.consumerKey,
@@ -66,7 +66,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 	//     }
 	//   })
 	// })
-// });
+});
 
 //rest API requirements
 app.use(bodyParser.urlencoded({

@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.pop-up-container{
+	margin:0 auto;
+	box-shadow: 1px 1px 2px lightgrey;
+	width:100%;
+	background: aliceblue;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-width:500px;
+}
+.pop-up-inner{
+	width:80%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.pop-up-status-body{
+	border: solid 2px lightskyblue;
+	border-radius:10px;
+	width:100%;
+	margin:10px 10px 0 15px;
+}
+
+.pop-up-tweet-content{
+	width:100%;
+	height:225px;
+	background:white;
+    resize: none;
+	border-radius:10px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border:none;
+	border-bottom:solid 1px lightgrey;
+    box-sizing: border-box;
+	padding:15px;
+    font-family: inherit;
+	font-size:1em;
+}
+
+.pop-up-tweet-button{
+	background:cornflowerblue;
+	color:white;
+	font-size: 1em;
+	border-radius: 20px;
+	font-weight: 600;
+	padding:10px 15px;
+	align-self: flex-end;
+	margin-top:10px;
+	user-select: none;
+}
+.pop-up-tweet-button:hover{
+	cursor:pointer;
+	background:skyblue;
+}
+.pop-up-thumbnail{
+	background:whitesmoke;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin-top:-5px;
+	overflow: hidden;
+}
+
+img{
+		height:80px;
+		margin:10px;
+		border-radius: 10px;
+}
+
+.pop-up-checkbox{
+	font-size: 13px;
+	margin:20px;
+}
+.pop-up-disclaimer{
+	font-size:13px;
+	background: white;
+	padding:10px;
+	border:solid sandybrown 2px;
+	border-radius:10px;
+}
